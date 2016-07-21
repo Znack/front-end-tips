@@ -1,3 +1,3 @@
-# My Awesome Book
+# Tips how to develop front end
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Here is the list of rules that we that we follow while creating awesome projects with high technical requirements:)
