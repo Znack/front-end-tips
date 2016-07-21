@@ -96,5 +96,34 @@ var chatBox = document.getElementById('chat-box');  // because it is native DOM 
 var firstList = $lists[0];  // because it is also native DOM element
 ```
 
+#### Concat selectors for elements with common behaviour
+```
+// bad way
+$('form p').addClass('valid');
+$('form li').addClass('valid');
+$('form span').addClass('valid');
 
+// good way
+$('form p, form li, form span').addClass('valid');
+```
+
+#### Make as much as possilbe with virtual elements
+When you need to add multiple elements in the DOM - create virtual parent and inject element there. When all work is done you can inject only one parent in the DOM with one instuction:
+```
+// bad way, we inject each element separately
+for (var i=0; i < items.length; i++){ 
+  var item = document.createElement("li");
+  item.appendChild(document.createTextNode("Option " + i);
+  list.appendChild(item); 
+}
+
+// good way - we gather all element in the virtual Fragment before appending to the list
+var fragment = document.createDocumentFragment();
+for (var i=0; i < items.length; i++){
+  var item = document.createElement("li"); 
+  item.appendChild(document.createTextNode("Option " + i);
+  fragment.appendChild(item); 
+} 
+list.appendChild(fragment);
+```
 
