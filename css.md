@@ -60,5 +60,38 @@ This will simplify your code and will make life of your colleagues much easier
 Try to keep all styles of one element in one place including media queries
 
 
+## Fonts
+#### Use .ttf, .svg (and .eot if IE<9 is required) for included files
+Use [Font Squirrel](https://www.fontsquirrel.com/) for generating there files. Only .ttf file will be enough for almost all your clients if you have dropped the support of IE<9, please check [this blog post](https://www.fontsquirrel.com/blog/2010/12/how-to-use-the-generator)
 
+#### If there are non-latin symbols add appropriate subsettings
+Check that your font file contains needed symbols. If you use [Font Squirrel](https://www.fontsquirrel.com/) for font's files generation and "expert" mode is enabled check the appropriate checkboxes.
 
+#### Use the same name for different styles of fonts
+The italic and light/bold versions of fonts usually are separate files with different names, but please keep the font name in CSS the same. The example is:
+```
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/lato-regular.woff2") ...;  /* Pay attention: font is regulat and "..." replaced for other formats */
+    font-weight: 400;
+    font-style: normal; 
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/lato-italic.woff2") ...;  /* Pay attention: font is regular italic and "..." replaced for other formats */
+    font-weight: 400;
+    font-style: italic; 
+}
+@font-face {
+    font-family: "Lato"; 
+    src: url("../fonts/lato-light.woff2") ...;  /* Pay attention: font is light and "..." replaced for other formats */
+    font-weight: 300;
+    font-style: normal; 
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/lato-lightitalic.woff2") ...;  /* Pay attention: font is light italic and "..." replaced for other formats */
+    font-weight: 300;
+    font-style: italic; 
+}
+```
