@@ -1,1 +1,9 @@
-{}
+{
+  "plugins": [ "anchors", "forkmegithub" ],
+  "pluginsConfig": {
+    "forkmegithub": {
+      "url": "https://github.com/Znack/front-end-tips",
+      "color": "darkblue"
+    }
+  }
+}
