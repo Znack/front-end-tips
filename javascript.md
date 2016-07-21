@@ -107,7 +107,7 @@ $('form span').addClass('valid');
 $('form p, form li, form span').addClass('valid');
 ```
 
-#### Make as much as possilbe with virtual elements
+#### Make as much as possible with virtual elements
 When you need to add multiple elements in the DOM - create virtual parent and inject element there. When all work is done you can inject only one parent in the DOM with one instuction:
 ```
 // bad way, we inject each element separately
@@ -126,4 +126,20 @@ for (var i=0; i < items.length; i++){
 } 
 list.appendChild(fragment);
 ```
+
+## Libraries
+#### Don't edit libraries in the project
+If you critically need to change the library - fork it one Github and point new version in dependencies file (eg `package.json`)
+
+#### How to choose library
+When you need to add new feature to your project (for example for new pretty dropdown or for URL routing) it is good choice to use some library. Usually they are tested and written much better than your own possible decision. Although it is hard for newbies to detect library with a bad code and choose the best when there are a bunch of candidacies.
+check for each candidacy:
+1. Is there a public repository and where it is?
+2. Is there a documentation and does it describe how to solve exactly your problem?
+3. If there is no detailed documentation learn a source code and understand how it solve your problem?
+4. Learn last issues - does it relate to your problems?
+5. If there are other front-end developers - make a decision together.
+
+
+
 
