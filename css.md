@@ -1,2 +1,64 @@
 # CSS
 
+## Common requirements
+### Use [Pixel Perfect Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) if client has provided you with the design mockups
+Always set appropriate scale for the web-page to be able compare all dimensions
+
+### Don't use styles from external sources
+CDN is not exteremely usefull. Possibility that user's browser has already cached the library with appropriate version is very low
+
+### Don't use @import directive for loading styles
+You had better concatenate all files by gulp or webpack
+
+### Divide all ```.css``` files into separate modules
+Each module should be less than 500 lines
+
+### Don't put two css rules on one line, use line breaks
+Even if you have one rule for given selector - create separate line for this
+
+### Don't forget about hidden layers in files with design
+Almost every interactive element (button, input or link) has separate styles for hover or pressed states
+
+### Always try to make page as liquid as possible
+Use static layout only by demand of the client
+
+### Keep a footer at the Bottom of the page
+There are plenty methods over the web, how to do it. For old browser use absolute position and simple padding without negative margins
+
+### Use lower-case-hyphenated for class names
+Don't use mySuperAwesomeElement or my_super_awesome_element
+
+### Give names to classes that reflect the meaning, not the styles
+Prefer "loading" to "big-yellow-spinny-thing"
+
+## Requirements about css rules
+### Don't use ```!important```
+In 99% cases you can just increase the priority of the selector
+
+### Don't use ```position: absolute``` where it is possible
+The flow of the elements is important very much - try to break it as rare as possible
+
+### Don't move elements with "top", "bottom", "left" or "right" rules that has ```position: relative```
+Relative position is quite confusing, so always try to move elements only with margin or padding. Move elements only in exceptional cases
+
+### Don't use negative margins
+However it is valid property and W3C allows it, the negative margins are more confusing than ```position: absolute```. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
+
+### Define default styles for ```<body>```
+Set background color, font-family and font color for body
+
+### Define ```cursor: pointer``` for interactive elements that does not support it by default
+Set ```cursor: pointer``` for all clickable ```<div>```s, ```<span>```s etc
+
+### Don't break proportion when using ```<img />```
+Don't set width and height simultaneously, if design requires set both dimension use ```background-image: url(...)``` and ```background-size: cover```
+
+### Avoid duplicating and redundant rules
+This will simplify your code and will make life of your colleagues much easier
+
+### Define styles for adaptive view inside @media right after primarily rules
+Try to keep all styles of one element in one place including media queries
+
+
+
+
