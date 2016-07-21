@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Initiation](chapter1.md)
+* [Initiation](initiation.md)
 * [HTML](html.md)
 * [CSS](css.md)
 
