@@ -63,6 +63,9 @@ Examples
 ```a href="mailto: example@mail.ru">example@mail.ru</a>```
 ```<a href="skype: someskype?call">someskype</a>```
 
+#### Use tag ```<code>```
+Sometimes for educational or other purpose we can display code samples (here document we do it very often as you can see). It is good practice to wrap all code snippets in the ```<code>``` tag and use only mono-spaced fonts.
+
 ## Assets files
 #### All files should have unique names in context of project and don't contain non-latin symbols
 If there is no special conventions, all names should be also "lower-case-hyphenated"
