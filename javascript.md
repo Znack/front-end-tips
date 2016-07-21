@@ -129,7 +129,7 @@ list.appendChild(fragment);
 
 ## Libraries
 #### Don't edit libraries in the project
-If you critically need to change the library - fork it one Github and point new version in dependencies file (eg `package.json`)
+If you critically need to change the library - fork it one Github and point new version in dependencies file (e.g. `package.json`)
 
 #### How to choose library
 When you need to add new feature to your project (for example for new pretty dropdown or for URL routing) it is good choice to use some library. Usually they are tested and written much better than your own possible decision. Although it is hard for newbies to detect library with a bad code and choose the best when there are a bunch of candidacies.
