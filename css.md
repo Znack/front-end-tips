@@ -44,8 +44,8 @@ Relative position is quite confusing, so always try to move elements only with m
 #### Don't use negative margins
 However it is valid property and W3C allows it, the negative margins are more confusing than ```position: absolute```. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
 
-#### Define default styles for ```<body>```
-Set background color, font-family and font color for body
+#### Define default styles for ```<html>```
+Set background color, font-family, font-size and font color for ```<html>```. Remember that font-size of html tag will be reference point for the ```rem```s font sizes.
 
 #### Define ```cursor: pointer``` for interactive elements that does not support it by default
 Set ```cursor: pointer``` for all clickable ```<div>```s, ```<span>```s etc
