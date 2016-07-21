@@ -100,18 +100,31 @@ The italic and light/bold versions of fonts usually are separate files with diff
 You should know differences between `px`, `em`, `%`, `rem`, `vw`, `vh`, `vmin`, `vmax`. Prefer `rem` for elements without specific requirements (for example static size or relative to window width)
 
 #### Always specify one Web safe font and subset for each `font-family`
-Example: `font-family: Helvetica, Arial, sans-serif;`
-`Helvetica` is a pluggable font with separate file.
-`Arial` is a Web safe font.
+Example: `font-family: Helvetica, Arial, sans-serif;`  
+`Helvetica` is a pluggable font with separate file.  
+`Arial` is a Web safe font.  
 `sans-serif` is a subset, that will be used if Arial is not supported by client.
-Subset can be 'Serif', 'Sans-serif', 'Monospace' and very rarely 'Cursive'.
+Subset can be 'Serif', 'Sans-serif', 'Monospace' and very rarely 'Cursive'.  
 For 'Serif' we prefer Georgia, for 'Sans-serif' Arial and for 'Monospace' Courier New. We have never used in practice 'Cursive' yet, although you can use Comic Sans for default value :)
 
-#### If font name contains white space, digits, or punctuation characters other than hyphens quote them
+#### Quote font name if it contains white space, digits, or punctuation characters other than hyphens
 For example `font-family: "Times New Roman", serif.`
 
+## CSS implicit rules
 
+#### Margin collapsing
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing) says: 
+> Top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the margins combined into it, a behavior known as margin collapsing.
+Be aware that margin of first child will move the parent too in most cases (learn more in [the article on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing))
 
+#### Parent will collapse if children are floated
+Please, learn and remember [this thread](http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing) on StackOverflow.
+
+#### Z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).
+
+> The problem with z-index is that very few people understand how it really works. It’s not complicated, but it if you’ve never taken the time to read its specification, there are almost certainly crucial aspects that you’re completely unaware of.
+
+Learn more [here](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/).
 
 
 
