@@ -4,5 +4,5 @@
 * [Initiation](initiation.md)
 * [HTML](html.md)
 * [CSS](css.md)
-* JavaScript
+* [JavaScript](javascript.md)
 
