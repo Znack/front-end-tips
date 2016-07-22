@@ -14,7 +14,7 @@ Use long names and long descriptions for all available text elements
 #### Use tags `<h1>...<h6>` only for headings
 And `<h1>` span should be only one per page
 
-#### Use `<table>` only for real tables
+#### Use `<table>` only for tabular data
 If table has headings - use `<thead>` span and nested `<th>` span for the first raw
 
 #### Don't use `<br>`
