@@ -55,7 +55,7 @@ Avoid simple `<img />` tags because sometimes links can be broken and web-site s
 Use email, number, color, etc, old browsers will just use them as simple text
 
 #### Don't create links with blank addresses `<a href="#">`
-Use simple `<span>`. And all links should correctly be opened in new tabs with third mouse button
+Use simple `<span>`. And all links should be able to open new tabs with third mouse button
 
 #### Use `mailto`, `tel` and `skype` prefixes for contacts links
 Examples
