@@ -2,73 +2,73 @@
 
 ## Common requirements
 #### Use [Pixel Perfect Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) if client has provided you with the design mockups
-Always set appropriate scale for the web-page to be able compare all dimensions
+ Always set appropriate scale for the web-page to be able compare all dimensions
 
 #### Don't use styles from external sources
-CDN is not exteremely usefull. Possibility that user's browser has already cached the library with appropriate version is very low
+ CDN is not exteremely usefull. Possibility that user's browser has already cached the library with appropriate version is very low
 
 #### Don't use @import directive for loading styles
-You had better concatenate all files by gulp or webpack
+ You had better concatenate all files by gulp or webpack
 
 #### Divide all `.css` files into separate modules
-Each module should be less than 500 lines
+ Each module should be less than 500 lines
 
-#### Don't put two css rules on one line, use line breaks
-Even if you have one rule for given selector - create separate line for this
+#### Don't put two CSS rules on one line, use line breaks
+ Even if you have one rule for given selector - create separate line for this. This approach is helpfull at least for checking diff-s in your CVS
 
 #### Don't forget about hidden layers in files with design
-Almost every interactive element (button, input or link) has separate styles for hover or pressed states
+ Almost every interactive element (button, input or link) has separate styles for hover or pressed states
 
 #### Always try to make page as liquid as possible
-Use static layout only by demand of the client
+ Use static layout only by demand of the client
 
-#### Keep a footer at the Bottom of the page
-There are plenty methods over the web, how to do it. For old browser use absolute position and simple padding without negative margins
+#### Keep a footer at the bottom of the page
+ There are plenty methods over the web how to do it. For old browser use absolute position and simple padding without negative margins
 
 #### Use lower-case-hyphenated for class names
-Don't use mySuperAwesomeElement or my_super_awesome_element
+ Don't use mySuperAwesomeElement or my_super_awesome_element
 
 #### Give names to classes that reflect the meaning, not the styles
-Prefer "loading" to "big-yellow-spinny-thing"
+ Prefer "loading" to "big-yellow-spinny-thing"
 
-## Requirements about css rules
+## Requirements about CSS rules
 #### Don't use `!important`
-In 99% cases you can just increase the priority of the selector
+ In 99% cases you can just increase the priority of the selector
 
 #### Don't use `position: absolute` where it is possible
-The flow of the elements is important very much - try to break it as rare as possible
+ The flow of the elements is extremely important - try to break it as rare as possible
 
 #### Don't move elements with "top", "bottom", "left" or "right" rules that has `position: relative`
-Relative position is quite confusing, so always try to move elements only with margin or padding. Move elements only in exceptional cases
+ Relative position is quite confusing, so always try to move elements with margin or padding. Move elements in exceptional cases
 
 #### Don't use negative margins
-However it is valid property and W3C allows it, the negative margins are more confusing than `position: absolute`. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
+ However it is valid property and W3C allows it, the negative margins are more confusing than `position: absolute`. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
 
 #### Define default styles for `<html>`
-Set background color, font-family, font-size and font color for `<html>`. Remember that font-size of html tag will be reference point for the `rem`s font sizes.
+ Set background color, font-family, font-size and font color for `<html>`. Remember that font-size of `<html>` tag will be reference point for the `rem`s font sizes.
 
 #### Define `cursor: pointer` for interactive elements that does not support it by default
-Set `cursor: pointer` for all clickable `<div>`s, `<span>`s etc
+ Set `cursor: pointer` for all clickable `<div>`s, `<span>`s etc
 
 #### Don't break proportion when using `<img />`
-Don't set width and height simultaneously, if design requires set both dimension use `background-image: url(...)` and `background-size: cover`
+ Don't set width and height simultaneously, if design requires set both dimension use `background-image: url(...) no-repeat center center` and `background-size: cover`
 
 #### Avoid duplicating and redundant rules
-This will simplify your code and will make life of your colleagues much easier
+ This will simplify your code and will make life of your colleagues much easier
 
 #### Define styles for adaptive view inside @media right after primarily rules
-Try to keep all styles of one element in one place including media queries
+ Try to keep all styles of one element in one place including media queries
 
 
 ## Fonts
-#### Use .ttf, .svg (and .eot if IE<9 is required) for included files
-Use [Font Squirrel](https://www.fontsquirrel.com/) for generating there files. Only .ttf file will be enough for almost all your clients if you have dropped the support of IE<9, please check [this blog post](https://www.fontsquirrel.com/blog/2010/12/how-to-use-the-generator)
+#### Use `.ttf`, `.svg` (and `.eot` for IE less then 9) for included files
+ Use [Font Squirrel](https://www.fontsquirrel.com/) for generating there files. The `.ttf` file will be enough for almost all modern browsers. Please check [this blog post](https://www.fontsquirrel.com/blog/2010/12/how-to-use-the-generator) to see the version of supported browsers for each font format
 
 #### If there are non-latin symbols add appropriate subsettings
-Check that your font file contains needed symbols. If you use [Font Squirrel](https://www.fontsquirrel.com/) for font's files generation and "expert" mode is enabled check the appropriate checkboxes.
+ Check that your font file contains needed symbols. If you use [Font Squirrel](https://www.fontsquirrel.com/) for font's files generation and "expert" mode is enabled check the appropriate checkboxes.
 
 #### Use the same name for different styles of fonts
-The italic and light/bold versions of fonts usually are separate files with different names, but please keep the font name in CSS the same. The example is:
+ The italic and light/bold versions of fonts usually are separate files with different names. Please keep the font name in CSS the same, the example is:
 ```
 @font-face {
     font-family: "Lato";
@@ -97,15 +97,15 @@ The italic and light/bold versions of fonts usually are separate files with diff
 ```
 
 #### Learn all popular CSS units
-You should know differences between `px`, `em`, `%`, `rem`, `vw`, `vh`, `vmin`, `vmax`. Prefer `rem` for elements without specific requirements (for example static size or relative to window width)
+ You should know differences between `px`, `em`, `%`, `rem`, `vw`, `vh`, `vmin`, `vmax`. Prefer `rem` for elements without specific requirements (for example static size or relative to window width)
 
 #### Always specify one Web safe font and subset for each `font-family`
-Example: `font-family: Helvetica, Arial, sans-serif;`  
-`Helvetica` is a pluggable font with separate file.  
-`Arial` is a Web safe font.  
-`sans-serif` is a subset, that will be used if Arial is not supported by client.
-Subset can be 'Serif', 'Sans-serif', 'Monospace' and very rarely 'Cursive'.  
-For 'Serif' we prefer Georgia, for 'Sans-serif' Arial and for 'Monospace' Courier New. We have never used in practice 'Cursive' yet, although you can use Comic Sans for default value :)
+ Example: `font-family: Helvetica, Arial, sans-serif;`  
+ `Helvetica` is a pluggable font with separate file.  
+ `Arial` is a Web safe font.  
+ `sans-serif` is a subset, that will be used if Arial is not supported by client.
+ Subset can be 'Serif', 'Sans-serif', 'Monospace' and very rarely 'Cursive'.  
+ For 'Serif' we prefer Georgia, for 'Sans-serif' Arial and for 'Monospace' Courier New. We have never used in practice 'Cursive' yet, although you can use Comic Sans for default value :)
 
 #### Quote font name if it contains white space, digits, or punctuation characters other than hyphens
 For example `font-family: "Times New Roman", serif.`
@@ -115,13 +115,13 @@ For example `font-family: "Times New Roman", serif.`
 #### Margin collapsing
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing) says: 
 > Top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the margins combined into it, a behavior known as margin collapsing.
+
 Be aware that margin of first child will move the parent too in most cases (learn more in [the article on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing))
 
 #### Parent will collapse if children are floated
 Please, learn and remember [this thread](http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing) on StackOverflow.
 
 #### Z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).
-
 > The problem with z-index is that very few people understand how it really works. It’s not complicated, but it if you’ve never taken the time to read its specification, there are almost certainly crucial aspects that you’re completely unaware of.
 
 Learn more [here](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/).
