@@ -7,7 +7,7 @@
  If there is not additional requirements for adaptive, check how the app should display on different dimensions
 
 #### Launch web-sites on http://localhost, not file:///c:\test.html
- There can be problems with iframes and cross-origin requests when web-site is hosted via file:// protocol
+ There can be problems with `<iframe>` and cross-origin requests when web-site is on `file://` protocol
  
 #### Don't stop on working decisions
  Test not only solution is working but also check how it is readable and reliable. Readability should be your first priority
