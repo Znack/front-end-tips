@@ -3,12 +3,21 @@
 ## Good practices
 #### Avoid JavaScript where we can handle with pure HTML+CSS
  HTML and CSS are declarative, JavaScript is imperative - that's main reason why you should prefer HTML and CSS.
+ 
+#### Readability have the highest priority
+ Any imperative code is a hard to maintain, so first of all try make the code the readable and easy to understand
 
 #### Don't use scripts from external sources
  The same as similar tip from [CSS](/front-end-tips/content/css.html#dont-use-styles-from-external-sources)
 
 #### Add all `<script>` before closing `</body>` tag
  This allow your site to show first content without blocking on code execution
+
+#### Learn how the browser render the page
+ This will allow you write applications with better performance and avoid a lot of mistakes while working with native DOM API. The good explanation [is here](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
+
+#### Handle the form's submit event, not click for the button
+ Some users prefer submit form with hitting Enter button inside the last input or pressing the Space button on `<input type="submit" />`
 
 #### All complex boolean instructions should be moved to function
  Avoid instruction with more than 1 operator inside of `if` conditions. Move such code `(allowUpdate) && ((user.isAdmin) || (user.role === item.owner)` to the separate function like `isAdminAndCanUpdate`
@@ -42,9 +51,6 @@
 
 #### Use [Modernizr](https://modernizr.com/) for feature detection
  Don't hope that comparing with user-agent is a better idea
-
-#### Learn how the browser render the page
- This will allow you write applications with better performance and avoid a lot of mistakes while working with native DOM API. The good explanation [is here](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
 
 #### Place public methods first and private methods last
  All methods try to group be their meaning
