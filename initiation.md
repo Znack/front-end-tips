@@ -10,5 +10,5 @@
  There can be problems with iframes and cross-origin requests when web-site is hosted via file:// protocol
  
 #### Don't stop on working decisions
- Test not only solution is working but also check how it is readable and reliable
+ Test not only solution is working but also check how it is readable and reliable. Readability should be your first priority
   
