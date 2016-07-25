@@ -17,33 +17,16 @@
  This will allow you write applications with better performance and avoid a lot of mistakes while working with native DOM API. The good explanation [is here](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
 
 #### Handle the form's submit event, not click for the button
- Some users prefer submit form with hitting Enter button inside the last input or pressing the Space button on `<input type="submit" />`
+ Some users prefer submit a form with hitting Enter button inside the last input or pressing the Space button on `<input type="submit" />`
 
 #### All complex boolean instructions should be moved to function
  Avoid instruction with more than 1 operator inside of `if` conditions. Move such code `(allowUpdate) && ((user.isAdmin) || (user.role === item.owner)` to the separate function like `isAdminAndCanUpdate`
 
 #### Don't change the prototypes of built-in constructors
  Of course sometimes it is good move - to extend `String.prototype` или `Function.prototype` but extend it only with standard widely used functions. For example you can create polyfill for `Function.prototype.bind` if you know very good what you are doing
-
-#### Try to not mutate one variable in a lot of functions
-  Consider following code:
-  ```
-  var box = {};
-
-  function addBall(box) {
-    box.ball = {radius: 2};
-  }
-  function addFood(box) {
-    box.food = {carrot: 4};
-  }
-  function addShoes(box) {
-    box.shoes = {sneakers: 2};
-  }
-  addBall(box);
-  addFood(box);
-  addShoes(box);
-  ```
-  Here we have to large area of usage for variable `box`. In greater apps that use such patterns we will be confused why some vars eventually will have dozens of carrots and thousands of shoes :)
+ 
+#### Prefer array iterator functions to simple loops
+ Usually `.map(...)`, `.filter(...)`, `.reduce(...)` methods are more readable then simple `for` and `while` loops. Additional advantage is the ability to export iterator-function separately and use it many times in different modules
 
 #### Don't use literals right in code, move it to separate module
  `if (status === 'active') {...}` - this is bad  
@@ -52,8 +35,29 @@
 #### Use [Modernizr](https://modernizr.com/) for feature detection
  Don't hope that comparing with user-agent is a better idea
 
-#### Place public methods first and private methods last
- All methods try to group be their meaning
+#### Avoid global variables
+ Global variables make the application state unpredictable. Global variables has too spread area of usage. Global variables make the app overcomplicated. Of course sometimes life make us use global variables, here is the list of examples:
+ 1. Oldschool libraries like Google Maps - it creates global variable itself. It also requires global callback function to notify us when everything is ready.
+ 2. Importing modules in small jQuery projects - here we can create one global variables to save all modules there
+
+#### Use global variables only as `window` properties
+ We should outstand all global variables and `window` prefix is great for this. It also helps us to find all usage among the all project files
+```
+// bad example:
+function test () {
+  foo = 'hello world';  // variable was created without var, so it is global
+}
+test();
+console.log(foo) // use foo as not window propery
+
+
+// correct example:
+function test () {
+  window.foo = 'hello world';  // here foo is explicit window property
+}
+test();
+console.log(window.foo) // use foo also as window property
+```
 
 #### Divide logging to debug level and production level
  Sometimes it is good practice to produce some logs in production - but keep your debug warnigns away from end users
@@ -71,13 +75,12 @@ el.style.backgroundColor = "#FFFFFF";
 el.classList.add("outstanding-text")
 ```
 
-
 ## JQuery
 #### Duplicate all classes with prefixes `js-` that you use in JavaScript
  Don't rely on classes that you also use for styling, sometimes you will change them because you will need new appearance. With such action you will break the scripts also! This tip will save you from double event handlers or outdated listeners  
- ```<div class="open-popup-button js-open-popup-button"></div>```  
+ `<div class="open-popup-button js-open-popup-button"></div>`  
  In js-files you will use only second class:  
-  `$('.js-open-popup-button').click(...);`
+ `$('.js-open-popup-button').click(...);`
 
 #### Cache all possible search results
 If there is no need to search elements again - cache results into the variable
@@ -149,6 +152,35 @@ Check for each candidacy:
 4. Learn last issues - does it relate to your problems?
 5. If there are other front-end developers working on the samke project, make a decision together.
 
+## Architecture
+#### Modules
+ Always divide your app to modules. Try to make modules with strong cohesion and weak coupling.
+
+#### Divide modules on layers
+ Try to make explicitly and monotonously all modules structure among the whole project. Separate all DOM manipulations, managing application state and data fetching from an API server. Make the convention about typical module structure and follow it
+
+#### Place public methods first and private methods last
+ All methods try to group be their meaning
+
+#### Try to not mutate one variable in a lot of functions
+  Consider following code:
+  ```
+  var box = {};
+
+  function addBall(box) {
+    box.ball = {radius: 2};
+  }
+  function addFood(box) {
+    box.food = {carrot: 4};
+  }
+  function addShoes(box) {
+    box.shoes = {sneakers: 2};
+  }
+  addBall(box);
+  addFood(box);
+  addShoes(box);
+  ```
+  Here we have to large area of usage for variable `box`. In greater apps that use such patterns we will be confused why some vars eventually will have dozens of carrots and thousands of shoes :)
 
 
 
