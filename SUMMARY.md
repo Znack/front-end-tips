@@ -6,5 +6,5 @@
 * [CSS](css.md)
 * [JavaScript](javascript.md)
 * [Credits](credits.md)
-* Deliverables
+* [Deliverables](deliverables.md)
 
