@@ -1,11 +1,19 @@
 # CSS
 
 ## Common requirements
+
+#### CSS is dangerous
+All CSS rules are global and almost all newbies misuse this feature. It is extremely easy end up medium and large projects with mess overcomplicated styles. If you trapped - you couldn't change any style without modifying the whole bunch of other elements. To prevent this conflicts learn and use various methods of orginizing the styles:
+1. [BEM](https://en.bem.info/)
+2. [Simple CSS pattern](https://isobar-idev.github.io/code-standards/#css_a_simple_css_code_pattern)
+3. [rscss](http://rscss.io/)
+
+
 #### Use [Pixel Perfect Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) if client has provided you with the design mockups
  Always set appropriate scale for the web-page to be able compare all dimensions
 
 #### Don't use styles from external sources
- CDN is not exteremely usefull. Possibility that user's browser has already cached the library with appropriate version is very low
+ CDN is not extremely useful. Possibility that user's browser has already cached the library with appropriate version is very low
 
 #### Don't use @import directive for loading styles
  You had better concatenate all files by gulp or webpack
@@ -21,6 +29,28 @@
 
 #### Always try to make page as liquid as possible
  Use static layout only by demand of the client
+
+#### Groups and sort style blocks
+All styles of one block should be in one place. All styles should be sorted in order the block are located on the page.  
+Good:
+```
+.header {...}
+.header-search-form {...}
+.header-search-input {...}
+
+.content {...}
+.content-heading {...}
+.content-sidebar {...}
+```    
+Bad:
+```
+.header {...}
+.content {...}
+.header-search-form {...}
+.content-heading {...}
+.header-search-input {...}
+.content-sidebar {...}
+```
 
 #### Keep a footer at the bottom of the page
  There are plenty methods over the web how to do it. For old browser use absolute position and simple padding without negative margins
@@ -44,6 +74,14 @@
 #### Don't use negative margins
  However it is valid property and W3C allows it, the negative margins are more confusing than `position: absolute`. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
 
+#### Avoid fixed height and max-height
+Fixed height can lead to confusing of your colleagues and overlapped elements. You can use fixed height when there is no other way or it is requirement of the design:
+1. For example we have slider, all elements have `position: absolute` and they move with JS scripts. Here we have to set height to the slider container because all children have `position: absolute`
+2. In the design we have a list of blocks with fixed height, all overflowing content should be hidden.
+
+#### Avoid fixed alignments
+Always try to align elements dynamically (with `margin: 0 auto`, `vertical-align: middle` or modern flexboxes)
+
 #### Define default styles for `<html>`
  Set background color, font-family, font-size and font color for `<html>`. Remember that font-size of `<html>` tag will be reference point for the `rem`s font sizes.
 
@@ -55,6 +93,12 @@
 
 #### Avoid duplicating and redundant rules
  This will simplify your code and will make life of your colleagues much easier
+
+#### Capitalize words with `text-transform: uppercase`
+ If you have some words with only upper cased symbols use `text-transform: uppercase`. Exception is abbreviation
+ 
+#### Define `:focus` styles for elements with `outline: none`
+ Outline style is useful for users who fills forms with keyboard
 
 #### Define styles for adaptive view inside @media right after primarily rules
  Try to keep all styles of one element in one place including media queries
