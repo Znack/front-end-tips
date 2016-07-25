@@ -43,6 +43,19 @@
  Good: `<img />` or `<input />`.  
  Bad: `<div />` and `<span />`
 
+#### Wrap with double quotes all attributes
+ Don't do like this:
+ ```
+<img width=200 />
+<div class=block></div>
+<a href='/some/url'></a>
+```
+
+#### Don't use `id` unless they functionally needed
+ Always try to guarantee that id will unique (for example get it only from database unique field). Use it only when you need:
+ * In-page navigation (example is Wikipedia web-site)
+ * Bind `<label>` and `<input>` if they placed in different DOM branches. However always prefer just put `<input>` inside `<label>`, here `id` is not required
+
 #### All tags should have classes
 Avoid simple unnamed `<div></div>` and `<span></span>`
 
@@ -51,6 +64,12 @@ Avoid simple unnamed `<div></div>` and `<span></span>`
 
 #### All images should have `alt` attribute
  Avoid simple `<img />` tags because sometimes links to the images can be broken. Nevertheless web-site should be still functional
+
+#### Try to wrap all interactive elements with `<form>` tag
+ This will allow submit form hitting Enter key and will semantically bind all elements of form
+ 
+#### Never use nested `<form>`
+ You can have several forms in a page but they should not be nested.
 
 #### Use various types of inputs where it is possible
  Use email, number, color, etc, old browsers will just use them as simple text
