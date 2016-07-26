@@ -3,14 +3,14 @@
 ## Common requirements
 
 #### CSS is dangerous
-All CSS rules are global and almost all newbies misuse this feature. It is extremely easy end up medium and large projects with mess overcomplicated styles. If you trapped - you couldn't change any style without modifying the whole bunch of other elements. To prevent this conflicts learn and use various methods of orginizing the styles:
+All CSS rules are global and almost all newbies misuse this feature. It is extremely easy to end up medium and large projects with mess overcomplicated styles. If you trapped - you couldn't change any style without modifying the whole bunch of other elements. To prevent these conflicts learn and use various methods of organizing the styles:
 1. [BEM](https://en.bem.info/)
 2. [Simple CSS pattern](https://isobar-idev.github.io/code-standards/#css_a_simple_css_code_pattern)
 3. [rscss](http://rscss.io/)
 
 
 #### Use [Pixel Perfect Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) if client has provided you with the design mockups
- Always set appropriate scale for the web-page to be able compare all dimensions
+ Always set appropriate scale for the web page to be able to compare all dimensions
 
 #### Don't use styles from external sources
  CDN is not extremely useful. Possibility that user's browser has already cached the library with appropriate version is very low
@@ -22,7 +22,7 @@ All CSS rules are global and almost all newbies misuse this feature. It is extre
  Each module should be less than 500 lines
 
 #### Don't put two CSS rules on one line, use line breaks
- Even if you have one rule for given selector - create separate line for this. This approach is helpfull at least for checking diff-s in your CVS
+ Even if you have one rule for given selector - create a separate line for this. This approach is helpful at least for checking diffs in your CVS
 
 #### Don't forget about hidden layers in files with design
  Almost every interactive element (button, input or link) has separate styles for hover or pressed states
@@ -31,7 +31,7 @@ All CSS rules are global and almost all newbies misuse this feature. It is extre
  Use static layout only by demand of the client
 
 #### Groups and sort style blocks
-All styles of one block should be in one place. All styles should be sorted in order the block are located on the page.  
+All styles of one block should be in one place. All styles should be sorted in order the block is located on the page.  
 Good:
 ```
 .header {...}
@@ -63,20 +63,20 @@ Bad:
 
 ## Requirements about CSS rules
 #### Don't use `!important`
- In 99% cases you can just increase the priority of the selector
+ In 99% cases, you can just increase the priority of the selector
 
 #### Don't use `position: absolute` where it is possible
  The flow of the elements is extremely important - try to break it as rare as possible
 
 #### Don't move elements with "top", "bottom", "left" or "right" rules that has `position: relative`
- Relative position is quite confusing, so always try to move elements with margin or padding. Move elements in exceptional cases
+ The relative position is quite confusing, so always try to move elements with margin or padding. Move elements in exceptional cases
 
 #### Don't use negative margins
- However it is valid property and W3C allows it, the negative margins are more confusing than `position: absolute`. There is [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
+ However it is valid property and W3C allows it, the negative margins are more confusing than `position: absolute`. There is the [great guide](https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/) about such margins, but all techniques can be replaced with more obvious solutions.
 
 #### Avoid fixed height and max-height
 Fixed height can lead to confusing of your colleagues and overlapped elements. You can use fixed height when there is no other way or it is requirement of the design:
-1. For example we have slider, all elements have `position: absolute` and they move with JS scripts. Here we have to set height to the slider container because all children have `position: absolute`
+1. For example, we have a slider, all elements have `position: absolute` and they move with JS scripts. Here we have to set height to the slider container because all children have `position: absolute`
 2. In the design we have a list of blocks with fixed height, all overflowing content should be hidden.
 
 #### Avoid fixed alignments
@@ -106,7 +106,7 @@ Always try to align elements dynamically (with `margin: 0 auto`, `vertical-align
 
 ## Fonts
 #### Use `.ttf`, `.svg` (and `.eot` for IE less then 9) for included files
- Use [Font Squirrel](https://www.fontsquirrel.com/) for generating there files. The `.ttf` file will be enough for almost all modern browsers. Please check [this blog post](https://www.fontsquirrel.com/blog/2010/12/how-to-use-the-generator) to see the version of supported browsers for each font format
+ Use [Font Squirrel](https://www.fontsquirrel.com/) for generating these files. The `.ttf` file will be enough for almost all modern browsers. Please check [this blog post](https://www.fontsquirrel.com/blog/2010/12/how-to-use-the-generator) to see the version of supported browsers for each font format
 
 #### If there are non-latin symbols add appropriate subsettings
  Check that your font file contains needed symbols. If you use [Font Squirrel](https://www.fontsquirrel.com/) for font's files generation and "expert" mode is enabled check the appropriate checkboxes.
@@ -145,9 +145,9 @@ Always try to align elements dynamically (with `margin: 0 auto`, `vertical-align
 
 #### Always specify one Web safe font and subset for each `font-family`
  Example: `font-family: Helvetica, Arial, sans-serif;`  
- `Helvetica` is a pluggable font with separate file.  
+ `Helvetica` is a pluggable font with a separate file.  
  `Arial` is a Web safe font.  
- `sans-serif` is a subset, that will be used if Arial is not supported by client.
+ `sans-serif` is a subset, that will be used if Arial is not supported by a client.
  Subset can be 'Serif', 'Sans-serif', 'Monospace' and very rarely 'Cursive'.  
  For 'Serif' we prefer Georgia, for 'Sans-serif' Arial and for 'Monospace' Courier New. We have never used in practice 'Cursive' yet, although you can use Comic Sans for default value :)
 
