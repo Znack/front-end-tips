@@ -38,10 +38,10 @@
 #### Avoid global variables
  Global variables make the application state unpredictable. Global variables have a too spread area of usage. Global variables make the app overcomplicated. Of course sometimes life make us use global variables, here is the list of examples:
  1. Oldschool libraries like Google Maps - it creates global variable itself. It also requires global callback function to notify us when everything is ready.
- 2. Importing modules in small jQuery projects - here we can create one global variables to save all modules there
+ 2. Importing modules in small jQuery projects - here we can create one global variable to save all modules there
 
 #### Use global variables only as `window` properties
- We should outstand all global variables and `window` prefix is great for this. It also helps us to find all usage among the all project files
+ We should outstand all global variables and `window` prefix is great for this. It also helps us to find all usage among all project files
 ```
 // bad example:
 function test () {
