@@ -2,28 +2,28 @@
 
 ## Good practices
 #### Avoid JavaScript where we can handle with pure HTML+CSS
- HTML and CSS are declarative, JavaScript is imperative - that's main reason why you should prefer HTML and CSS.
+ HTML and CSS are declarative, JavaScript is imperative - that's the main reason why you should prefer HTML and CSS.
  
-#### Readability have the highest priority
- Any imperative code is a hard to maintain, so first of all try make the code the readable and easy to understand
+#### Readability has the highest priority
+ Any imperative code is a hard to maintain, so first of all, try make the code the readable and easy to understand
 
 #### Don't use scripts from external sources
  The same as similar tip from [CSS](/front-end-tips/content/css.html#dont-use-styles-from-external-sources)
 
 #### Add all `<script>` before closing `</body>` tag
- This allow your site to show first content without blocking on code execution
+ This allows your site to show first content without blocking on code execution
 
-#### Learn how the browser render the page
+#### Learn how the browser renders the page
  This will allow you write applications with better performance and avoid a lot of mistakes while working with native DOM API. The good explanation [is here](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
 
-#### Handle the form's submit event, not click for the button
- Some users prefer submit a form with hitting Enter button inside the last input or pressing the Space button on `<input type="submit" />`
+#### Handle the form's submit event, not click the button
+ Some users prefer to submit a form with hitting Enter button inside the last input or pressing the Space button on `<input type="submit" />`
 
 #### All complex boolean instructions should be moved to function
  Avoid instruction with more than 1 operator inside of `if` conditions. Move such code `(allowUpdate) && ((user.isAdmin) || (user.role === item.owner)` to the separate function like `isAdminAndCanUpdate`
 
 #### Don't change the prototypes of built-in constructors
- Of course sometimes it is good move - to extend `String.prototype` или `Function.prototype` but extend it only with standard widely used functions. For example you can create polyfill for `Function.prototype.bind` if you know very good what you are doing
+ Of course, sometimes it is a good move - to extend `String.prototype` или `Function.prototype` but extend it only with standard widely used functions. For example, you can create polyfill for `Function.prototype.bind` if you know very good what you are doing
  
 #### Prefer array iterator functions to simple loops
  Usually `.map(...)`, `.filter(...)`, `.reduce(...)` methods are more readable then simple `for` and `while` loops. Additional advantage is the ability to export iterator-function separately and use it many times in different modules
@@ -36,7 +36,7 @@
  Don't hope that comparing with user-agent is a better idea
 
 #### Avoid global variables
- Global variables make the application state unpredictable. Global variables has too spread area of usage. Global variables make the app overcomplicated. Of course sometimes life make us use global variables, here is the list of examples:
+ Global variables make the application state unpredictable. Global variables have a too spread area of usage. Global variables make the app overcomplicated. Of course sometimes life make us use global variables, here is the list of examples:
  1. Oldschool libraries like Google Maps - it creates global variable itself. It also requires global callback function to notify us when everything is ready.
  2. Importing modules in small jQuery projects - here we can create one global variables to save all modules there
 
