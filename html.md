@@ -3,7 +3,7 @@
 ## Semantics
 
 #### Divide elements by meaning
- Sometimes there is easy way to divide block by their appearance because it requires less styles. But it is wrong way that will confuse colleagues and make the app less scalable
+ Sometimes there is an easy way to divide block by their appearance because it requires fewer styles. But it is wrong way that will confuse colleagues and make the app less scalable
 
 #### Don't insert block element inside inlines
  Avoid such code: `<span><div></div></span>`
@@ -20,7 +20,7 @@
 #### Don't use `<br>`
  `<br>`s seem to be appropriate only where all of the following conditions apply:
  1. Newlines are semantically meaningful
- 2. Indentation is not semantically meaningful (otherwise you should use a `<pre>`)
+ 2. Indentation is not semantically meaningful (otherwise, you should use a `<pre>`)
  3. There exists no other semantically appropriate tag, like a paragraph or header tag
 
 ## Tags
@@ -34,12 +34,12 @@
  It can save `<title>` from incorrect encoding
 
 #### Each page should contain meta tags and favicon
- Define tags title, keywords and description in the `<head>`
+ Define tags title, keywords, and description in the `<head>`
 
 #### Define viewport meta tag for each page
  Usually the default `<meta name="viewport" content="initial-scale=1.0, width=device-width">` will be enough
 
-#### Avoid self closing for tags that can have children
+#### Avoid self-closing for tags that can have children
  Good: `<img />` or `<input />`.  
  Bad: `<div />` and `<span />`
 
@@ -63,13 +63,13 @@ Avoid simple unnamed `<div></div>` and `<span></span>`
  There should not be something like this: `<div onclick="func()">`
 
 #### All images should have `alt` attribute
- Avoid simple `<img />` tags because sometimes links to the images can be broken. Nevertheless web-site should be still functional
+ Avoid simple `<img />` tags because sometimes links to the images can be broken. Nevertheless, web-site should be still functional
 
 #### Try to wrap all interactive elements with `<form>` tag
- This will allow submit form hitting Enter key and will semantically bind all elements of form
+ This will allow submiting form hitting Enter key and will semantically bind all elements of form
  
 #### Never use nested `<form>`
- You can have several forms in a page but they should not be nested.
+ You can have several forms on a page but they should not be nested.
 
 #### Use various types of inputs where it is possible
  Use email, number, color, etc, old browsers will just use them as simple text
@@ -86,11 +86,11 @@ Avoid simple unnamed `<div></div>` and `<span></span>`
 ```
 
 #### Use tag `<code>`
- Sometimes for educational or other purpose we can display code samples (here document we do it very often as you can see). It is good practice to wrap all code snippets in the `<code>` tag and use only mono-spaced fonts.
+ Sometimes for educational or another purpose we can display code samples (the here document we do it very often as you can see). It is good practice to wrap all code snippets in the `<code>` tag and use only monospaced fonts.
 
 ## Assets files
 #### All files should have unique names in context of project and don't contain non-latin symbols
- If there is no special conventions, all names should be also "lower-case-hyphenated"
+ If there are no special conventions, all names should be also "lower-case-hyphenated"
 
 #### Project should always contain favicon
  If you can't find it - spend some time to ask manager or designer for it
