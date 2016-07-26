@@ -60,7 +60,7 @@ console.log(window.foo) // use foo also as window property
 ```
 
 #### Divide logging to debug level and production level
- Sometimes it is good practice to produce some logs in production - but keep your debug warnigns away from end users
+ Sometimes it is good practice to produce some logs in production - but keep your debug warnings away from end users
 
 #### Try to change classes for elements, not the direct CSS properties
 ``` 
@@ -77,7 +77,7 @@ el.classList.add("outstanding-text")
 
 ## JQuery
 #### Duplicate all classes with prefixes `js-` that you use in JavaScript
- Don't rely on classes that you also use for styling, sometimes you will change them because you will need new appearance. With such action you will break the scripts also! This tip will save you from double event handlers or outdated listeners  
+ Don't rely on classes that you also use for styling, sometimes you will change them because you will need new appearance. With such action, you will break the scripts also! This tip will save you from double event handlers or outdated listeners  
  `<div class="open-popup-button js-open-popup-button"></div>`  
  In js-files you will use only second class:  
  `$('.js-open-popup-button').click(...);`
@@ -120,7 +120,7 @@ $('form p, form li, form span').addClass('valid');
 ```
 
 #### Make as much as possible with virtual elements
-When you need to add multiple elements in the DOM - create virtual parent and inject element there. When all work is done you can inject only one parent in the DOM with one instuction:
+When you need to add multiple elements in the DOM - create virtual parent and inject element there. When all work is done you can inject only one parent in the DOM with one instruction:
 ```
 // bad way, we inject each element separately
 for (var i=0; i < items.length; i++){ 
@@ -144,23 +144,23 @@ list.appendChild(fragment);
 If you critically need to change the library - fork it one Github and point new version in dependencies file (e.g. `package.json`)
 
 #### How to choose library
-When you need to add new feature to your project (for example new pretty dropdown or URL routing) it is good choice to use some library. Usually they are tested and written much better than your own possible decision. Although it is hard for newbies to detect library with a bad code and choose the best when there are a bunch of candidacies.
+When you need to add new feature to your project (for example new pretty dropdown or URL routing) it is good choice to use some library. Usually, they are tested and written much better than your own possible decision. Although it is hard for newbies to detect library with a bad code and choose the best when there are a bunch of candidacies.
 Check for each candidacy:
 1. Is there a public repository and where it is?
 2. Is there a documentation and does it describe how to solve exactly your problem?
-3. If there is no detailed documentation learn a source code and understand how it solve your problem?
+3. If there is no detailed documentation learn a source code and understand how it solves your problem?
 4. Learn last issues - does it relate to your problems?
-5. If there are other front-end developers working on the samke project, make a decision together.
+5. If there are other front-end developers working on the same project, make a decision together.
 
 ## Architecture
 #### Modules
- Always divide your app to modules. Try to make modules with strong cohesion and weak coupling.
+ Always divide your app into modules. Try to make modules with strong cohesion and weak coupling.
 
 #### Divide modules on layers
  Try to make explicitly and monotonously all modules structure among the whole project. Separate all DOM manipulations, managing application state and data fetching from an API server. Make the convention about typical module structure and follow it
 
 #### Place public methods first and private methods last
- All methods try to group be their meaning
+ All methods try to group by their meaning
 
 #### Try to not mutate one variable in a lot of functions
   Consider following code:
