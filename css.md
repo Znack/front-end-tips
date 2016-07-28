@@ -166,7 +166,7 @@ Be aware that margin of first child will move the parent  in most cases too (lea
 Please, learn and remember [this thread](http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing) on StackOverflow.
 
 #### Z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).
-> The problem with z-index is that a few people understand how it really works. It’s not complicated, but if you’ve never taken time to read its specification,  certainly there are crucial aspects that you’re completely unaware of.
+> The problem with z-index is that very few people understand how it really works. It’s not complicated, but it if you’ve never taken the time to read its specification, there are almost certainly crucial aspects that you’re completely unaware of
 
 Learn more [here](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/).
 
