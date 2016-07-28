@@ -12,7 +12,7 @@
  Use long names and long descriptions for all available text elements
 
 #### Use tags `<h1>...<h6>` only for headings
- each individual page of a site should have one <h1> level heading
+ Only one  `<h1>` is supposed to be on one page
 
 #### Use `<table>` only for tabular data
  If a table has a heading row - use `<thead>` and nested `<th>` for the first raw
