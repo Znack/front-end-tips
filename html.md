@@ -60,7 +60,7 @@
 Avoid simple unnamed `<div></div>` and `<span></span>`
 
 #### Don't use inline styles and event handlers
- There should not be something like this: `<div onclick="func()">`
+ There should not be something like this: `<div onclick="func()">`. Of course except of projects with frameworks that make you to do such things (like Angular or React)
 
 #### All images should have `alt` attribute
  Avoid simple `<img />` tags because sometimes links to the images can be broken. Nevertheless web-site should be still functional
