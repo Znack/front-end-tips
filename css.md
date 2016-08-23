@@ -15,8 +15,8 @@ All CSS rules are global and almost all newbies misuse this feature. It is extre
 #### Don't use styles from external sources
  CDN is not extremely useful. Possibility that user's browser has already cached the library with appropriate version is very low
 
-#### Don't use @import directive for loading styles
- You are better to concatenate all files with Gulp or Webpack
+#### Don't use @import directive for loading styles in the production CSS
+ Although nothing bad will happen if use imports that will be replace with such tools like Webpack
 
 #### Divide all `.css` files into separate modules
  Each module should have less than 500 lines
